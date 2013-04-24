@@ -7,22 +7,18 @@ define [
 
   class NotesView extends View
 
-    # This is important - does not render without it
-    # region: 'main'
     id: 'notes'
     container: '#content-container'
-    autoRender: yes
-    
-    render: -> 
-      super
 
     # rendered: no
 
     getTemplateData: ->
-      super
-      # console.log data
-      # data
+      data = super
+      console.log data
+      data
 
+    listen: 
+      # 'change collection': 'processNotes'
 
     # Save the template string in a prototype property.
     # This is overwritten with the compiled template function.
@@ -30,12 +26,14 @@ define [
     template: template
     template = null
 
-    initialize: ->
-      super
-      @collection.synced =>
-        console.log "synced event in view"
-        console.log @collection
-        unless @rendered 
-          @render()
-          @rendered = yes
+    processNotes: ->
+      console.log('got Notes via fetch')
+      console.log @collection
+      render()
+
+    initialize: ( options = {} )->
+      super options
+      @listenTo @collection, 'change', @processNotes
+
+
 

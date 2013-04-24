@@ -1,9 +1,15 @@
-source :gemcutter
+source 'https://rubygems.org'
 gem 'sinatra', '>=1.1.2'
-gem 'sinatra-sequel'
+# gem 'sinatra-sequel'
+gem 'shotgun', '0.9'
+
+gem 'mongo'
+gem 'bson_ext'
+gem 'json'
+gem 'pry'
 
 group :development do
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :test do

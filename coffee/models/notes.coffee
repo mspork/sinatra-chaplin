@@ -12,7 +12,7 @@ define [
     # This is the URL that HTTP methods will be run against.    
     url: 'api/notes'
 
-    model: Note
+    # model: Note
 
     initialize: -> 
       super
@@ -36,16 +36,16 @@ define [
       # request.fail => @abortSync()
       # request
 
-    processNotes: (response) ->
-      # Exit if for some reason this collection was
-      # disposed prior to the response
-      return if @disposed
+    # processNotes: (response) ->
+    #   # Exit if for some reason this collection was
+    #   # disposed prior to the response
+    #   return if @disposed
 
-      # Update the collection
-      # @reset(if response and response.data then response.data else [])
+    #   # Update the collection
+    #   # @reset(if response and response.data then response.data else [])
 
-      # Set the machine into `synced` state
-      @finishSync()
+    #   # Set the machine into `synced` state
+    #   @finishSync()
 
     announce: =>
       console.debug 'state changed'

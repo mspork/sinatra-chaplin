@@ -9,7 +9,7 @@ This is very much work in progress. I am still getting my head around how Chapli
 
 The sinatra application is contained in the server folder. 
 
-I run the sinatra app with:
+I run the sinatra app from the `server` directory with:
 
 ```
 bundle exec shotgun 

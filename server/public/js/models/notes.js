@@ -18,8 +18,6 @@
 
       Notes.prototype.url = 'api/notes';
 
-      Notes.prototype.model = Note;
-
       Notes.prototype.initialize = function() {
         Notes.__super__.initialize.apply(this, arguments);
         _(this).extend(Chaplin.SyncMachine);
@@ -43,13 +41,6 @@
           return _this.finishSync();
         };
         return Notes.__super__.fetch.call(this, options);
-      };
-
-      Notes.prototype.processNotes = function(response) {
-        if (this.disposed) {
-          return;
-        }
-        return this.finishSync();
       };
 
       Notes.prototype.announce = function() {

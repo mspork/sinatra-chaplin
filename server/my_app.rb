@@ -16,6 +16,7 @@ require_relative 'config/init.rb'
 # Quick test
 
 class NotesApp < Sinatra::Base
+	set :root, File.dirname(__FILE__)
 
 	get '/' do
 	  # haml :index, :attr_wrapper => '"', :locals => { :title => 'hello'} 

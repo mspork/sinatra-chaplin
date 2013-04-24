@@ -19,32 +19,30 @@
 
       NotesView.prototype.container = '#content-container';
 
-      NotesView.prototype.autoRender = true;
+      NotesView.prototype.getTemplateData = function() {
+        var data;
 
-      NotesView.prototype.render = function() {
-        return NotesView.__super__.render.apply(this, arguments);
+        data = NotesView.__super__.getTemplateData.apply(this, arguments);
+        console.log(data);
+        return data;
       };
 
-      NotesView.prototype.getTemplateData = function() {
-        return NotesView.__super__.getTemplateData.apply(this, arguments);
+      NotesView.prototype.listen = {
+        'change collection': 'processNotes'
       };
 
       NotesView.prototype.template = template;
 
       template = null;
 
-      NotesView.prototype.initialize = function() {
-        var _this = this;
+      NotesView.prototype.processNotes = function() {
+        console.log('got Notes via fetch');
+        console.log(this.collection);
+        return render();
+      };
 
-        NotesView.__super__.initialize.apply(this, arguments);
-        return this.collection.synced(function() {
-          console.log("synced event in view");
-          console.log(_this.collection);
-          if (!_this.rendered) {
-            _this.render();
-            return _this.rendered = true;
-          }
-        });
+      NotesView.prototype.initialize = function() {
+        return NotesView.__super__.initialize.apply(this, arguments);
       };
 
       return NotesView;
