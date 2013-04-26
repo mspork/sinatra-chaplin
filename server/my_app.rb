@@ -19,9 +19,13 @@ class NotesApp < Sinatra::Base
 	set :root, File.dirname(__FILE__)
 
 	get '/' do
-	  # haml :index, :attr_wrapper => '"', :locals => { :title => 'hello'} 
-	  erb :index
+	  erb :desktop_index
 	end
+
+	get '/mobi' do
+		erb :mobi_index
+	end
+
 
 	#  The following code is derived from 
 	#  http://addyosmani.com/blog/building-backbone-js-apps-with-ruby-sinatra-mongodb-and-haml/

@@ -4,7 +4,6 @@ require 'uri'
 
 
 class NotesApp < Sinatra::Base
-	# DB = Mongo::Connection.new.db("learning-mongo")
 
 	configure :development do
 		DB = Mongo::MongoClient.new("localhost", 27017).db('learning-mongo')

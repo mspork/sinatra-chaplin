@@ -1,0 +1,24 @@
+<table class="table table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Note Text</th>
+            <th>Remind interval</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each items }}
+        <tr>
+            <td> {{ text }} </td>
+            <td> {{ remindInterval }} </td>
+            <td><a href="#/edit/{{id}}" class="btn">Edit</a></td>
+        </tr>
+        {{/each}}
+    </tbody> 
+</table> 
+
+<div style="visibility: hidden">
+    {{! {{#eachProperty items.[0] }} }}
+        {{! {{property}}: {{value}}<br/> }}
+    {{! {{/eachProperty }} }}
+</div>
