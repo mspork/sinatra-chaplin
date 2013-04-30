@@ -1,6 +1,5 @@
 require 'mongo'
 require 'uri'
-require 'zurb-foundation'
 # Require any additional compass plugins here.
 
 
@@ -31,8 +30,8 @@ class NotesApp < Sinatra::Base
 
 end
  
-require_relative 'migrations'
+# require_relative 'migrations'
 
 #Add our data (tours & dates) from the file config/data.rb
-require_relative 'data'
+# require_relative 'data'
 
