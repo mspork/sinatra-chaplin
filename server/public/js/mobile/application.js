@@ -37,7 +37,7 @@ define(
 						var templateFunc = Handlebars.compile(notesTemplate);
 						that.$el.html(templateFunc({ 'items': json }));
 						$('.top-bar')
-							.toggleClass('expanded')
+							.removeClass('expanded')
 							.css('min-height', '');
 					}
 				});
@@ -50,7 +50,7 @@ define(
 				templateFunc = Handlebars.compile(helloTemplate);
 				this.$el.html(templateFunc());
 				$('.top-bar')
-					.toggleClass('expanded')
+					.removeClass('expanded')
 					.css('min-height', '');
 			}
 		});
