@@ -2,15 +2,15 @@
 define(
 	['backbone',
 	'handlebars',
-	// 'zepto',
-	// 'foundation',
-	// 'foundationtopbar',
+	'zepto',
+	'foundation',
+	'foundationtopbar',
 	'text!desktop/templates/hello-world.hbs',
 	'text!desktop/templates/notes.hbs',
 	'text!desktop/templates/navigation.hbs' ],
 	function(
 		Backbone, Handlebars,
-		// Zepto, Foundation, FoundationTopbar, 
+		Zepto, Foundation, FoundationTopbar,
 		helloTemplate, notesTemplate, navigationTemplate) {
 	// console.log(person.first + ' ' + person.last);
 	// 
@@ -31,7 +31,7 @@ define(
 				var that = this;
 				notes.fetch({
 					success: function(notes) {
-						console.log(notes.toJSON());
+						// console.log(notes.toJSON());
 						// https://github.com/wycats/handlebars.js/issues/122
 						var json = notes.toJSON();
 						var templateFunc = Handlebars.compile(notesTemplate);
