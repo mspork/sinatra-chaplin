@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chaplin Boilerplate Application</title>
 
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/normalize.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
 
+  <script src="js/vendor/custom.modernizr.js"></script>
   <script src="js/vendor/require-2.1.1.js"></script>
+
 
   <script>
   // Configure the AMD module loader
@@ -16,11 +19,15 @@
     baseUrl: 'js',
     // Specify the paths of vendor libraries
     paths: {
-      jquery: 'vendor/jquery-1.9.1',
-      underscore: 'vendor/underscore-1.4.3',
-      backbone: 'vendor/backbone-1.0.0',
-      handlebars: 'vendor/handlebars-1.0.rc.1',
-      text: 'vendor/require-text-2.0.3'
+      // jquery:                 'vendor/jquery-1.9.1',
+      // zepto:                  "vendor/zepto", 
+      underscore:             'vendor/underscore-1.4.3',
+      backbone:               'vendor/backbone-1.0.0',
+      handlebars:             'vendor/handlebars-1.0.rc.1',
+      text:                   'vendor/require-text-2.0.3',
+      // foundation
+      // foundation:           'foundation/foundation',
+      // foundationtopbar:     'foundation/foundation.topbar'
     },
     // Underscore and Backbone are not AMD-capable per default,
     // so we need to use the AMD wrapping of RequireJS
@@ -29,12 +36,22 @@
         exports: '_'
       },
       backbone: {
-        deps: ['underscore', 'jquery'],
+        deps: ['underscore'],
         exports: 'Backbone'
       },
       handlebars: {
         exports: 'Handlebars'
       }
+      // zepto: {
+      //   exports: 'Zepto'
+      // },
+      // foundation: {
+      //     deps: ["zepto"],
+      //     exports: "foundation"
+      // },
+      // foundationtopbar: {
+      //     deps: ["zepto", "foundation"]
+      // }
     }
     // For easier development, disable browser caching
     // Of course, this should be removed in a production environment
@@ -53,18 +70,48 @@
 </head>
 <body>
   <h1>Mobile</h1>
-  <div id="page-container" class="container">
-    <div class="row">
-      <nav id="navigation-container" class="span12">
-        <ul class="inline">
-          <li><a href="#">Hello</a></li>
-          <li><a href="#notes">Notes</a></li>  
-        </ul>
-      </nav>
-    </div>
-    <div class="row">  
-      <div id="content-container" class="span12"></div>
-    </div>
+  <div id="page-container">
+
+    <nav id="nav-container" class="top-bar">
+      <ul class="title-area">
+        <li class="name active" ><h1><a href="#">Home</a></h1></li>
+        <li class="toggle-topbar menu-icon"><a href="#notes">Notes</a></li>  
+      </ul>
+
+      <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="active"><a href="#notes">Notes</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Main Item 2</a></li>
+      </ul>
+      </section>          
+    </nav>
+
+    <div id="content-container" ></div>
   </div>
+  
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  <script src="js/foundation/foundation.alerts.js"></script>
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
+    
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  <script src="js/foundation/foundation.reveal.js"></script>
+  <script src="js/foundation/foundation.section.js"></script>
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+
+  <script>
+  $(function(){
+    $(document).foundation();    
+  })
+  </script>
+
 </body>
 </html>

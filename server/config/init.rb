@@ -1,6 +1,7 @@
 require 'mongo'
 require 'uri'
-
+require 'zurb-foundation'
+# Require any additional compass plugins here.
 
 
 class NotesApp < Sinatra::Base

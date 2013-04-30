@@ -2,10 +2,16 @@
 define(
 	['backbone',
 	'handlebars',
+	// 'zepto',
+	// 'foundation',
+	// 'foundationtopbar',
 	'text!desktop/templates/hello-world.hbs',
 	'text!desktop/templates/notes.hbs',
 	'text!desktop/templates/navigation.hbs' ],
-	function(Backbone, Handlebars, helloTemplate, notesTemplate, navigationTemplate) {
+	function(
+		Backbone, Handlebars,
+		// Zepto, Foundation, FoundationTopbar, 
+		helloTemplate, notesTemplate, navigationTemplate) {
 	// console.log(person.first + ' ' + person.last);
 	// 
 	var App = function() {
@@ -26,6 +32,7 @@ define(
 				notes.fetch({
 					success: function(notes) {
 						console.log(notes.toJSON());
+						// https://github.com/wycats/handlebars.js/issues/122
 						var json = notes.toJSON();
 						var templateFunc = Handlebars.compile(notesTemplate);
 						that.$el.html(templateFunc({ 'items': json }));
@@ -78,6 +85,8 @@ define(
 
 		Backbone.history.start();
 		// Backbone.history.start({pushState: true});
+		// 
+		Zepto(document).foundation();
 	};
 
 	console.log('returning from application.js');
