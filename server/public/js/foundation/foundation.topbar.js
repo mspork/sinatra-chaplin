@@ -61,6 +61,10 @@
       var offst = this.outerHeight($('.top-bar'));
       $(this.scope)
         .on('click.fndtn.topbar', '.top-bar .toggle-topbar', function (e) {
+          // setTimeout( function() {
+          //     alert("Handling toggle-topbar event");
+          //   }, 3000);
+          // console.log('topbar event: ' + e);
           var topbar = $(this).closest('.top-bar'),
               section = topbar.find('section, .section'),
               titlebar = topbar.children('ul').first();
@@ -100,6 +104,7 @@
         })
 
         .on('click.fndtn.topbar', '.top-bar .has-dropdown>a', function (e) {
+          debugger;
           var topbar = $(this).closest('.top-bar'),
               section = topbar.find('section, .section'),
               titlebar = topbar.children('ul').first(),
@@ -142,6 +147,7 @@
 
       // Go up a level on Click
       $(this.scope).on('click.fndtn', '.top-bar .has-dropdown .back', function (e) {
+        debugger;
         e.preventDefault();
 
         var $this = $(this),

@@ -36,6 +36,9 @@ define(
 						var json = notes.toJSON();
 						var templateFunc = Handlebars.compile(notesTemplate);
 						that.$el.html(templateFunc({ 'items': json }));
+						$('.top-bar')
+							.toggleClass('expanded')
+							.css('min-height', '');
 					}
 				});
 			}
@@ -46,6 +49,9 @@ define(
 			render: function(){
 				templateFunc = Handlebars.compile(helloTemplate);
 				this.$el.html(templateFunc());
+				$('.top-bar')
+					.toggleClass('expanded')
+					.css('min-height', '');
 			}
 		});
 
