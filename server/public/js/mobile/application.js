@@ -55,13 +55,13 @@ define(
 			}
 		});
 
-		var NavigationView = Backbone.View.extend({
-			el: '#navigation-container',
-			render: function(){
-				templateFunc = Handlebars.compile(navigationTemplate);
-				this.$el.html(templateFunc({ 'navPath' :  'mobi' }));
-			}
-		});
+		// var NavigationView = Backbone.View.extend({
+		// 	el: '#navigation-container',
+		// 	render: function(){
+		// 		templateFunc = Handlebars.compile(navigationTemplate);
+		// 		this.$el.html(templateFunc({ 'navPath' :  'mobi' }));
+		// 	}
+		// });
 
 		var Router = Backbone.Router.extend({
 			routes: {
@@ -73,7 +73,8 @@ define(
 
 		var noteList = new NoteList();
 		var home = new HelloView();
-		var nav = new NavigationView();
+		
+		// var nav = new NavigationView();
 
 		var router = new Router();
 
