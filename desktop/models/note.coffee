@@ -1,6 +1,6 @@
 define [
   'chaplin',
-  'models/base/model'
+  'js/desktop/models/base/model'
 ], (Chaplin, Model) ->
   'use strict'
 

@@ -1,0 +1,10 @@
+<div class="section-container auto" data-section>
+{{#each items }}
+  <section>
+    <p class="title" data-section-title><a href="#notes/{{id}}">{{ text }}</a></p>
+    <div class="content" data-section-content>
+      <p>{{ remindInterval }}</p>
+    </div>
+  </section>
+{{/each}}
+</div>

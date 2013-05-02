@@ -1,7 +1,7 @@
 define [
-  'views/base/view'
-  'text!templates/navigation.hbs',
-  'models/navigation'
+  'js/desktop/views/base/view'
+  'text!templates/desktop/navigation.hbs',
+  'js/desktop/models/navigation'
 ], (View, template, Naviation) ->
   'use strict'
 

@@ -1,6 +1,6 @@
 define [
   'chaplin'
-  'routes'
+  'js/desktop/routes'
 ], (Chaplin, routes) ->
   'use strict'
 
@@ -18,7 +18,7 @@ define [
       # ---------------------------
 
       # Dispatcher listens for routing events and initialises controllers.
-      @initDispatcher controllerSuffix: '-controller'
+      @initDispatcher { controllerPath: 'js/desktop/controllers/', controllerSuffix: '-controller'}
 
       # Layout listens for click events & delegates internal links to router.
       @initLayout()

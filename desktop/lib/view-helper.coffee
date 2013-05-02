@@ -1,7 +1,7 @@
 define [
   'handlebars'
   'chaplin'
-  'lib/utils'
+  'js/desktop/lib/utils'
 ], (Handlebars, Chaplin, utils) ->
   'use strict'
 

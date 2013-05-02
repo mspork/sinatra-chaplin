@@ -1,7 +1,7 @@
 define [
   'chaplin',
-  'models/base/collection',
-  'models/note'
+  'js/desktop/models/base/collection',
+  'js/desktop/models/note'
 ], (Chaplin, Collection, Note) ->
   'use strict'
 

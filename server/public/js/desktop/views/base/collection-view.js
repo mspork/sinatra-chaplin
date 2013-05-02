@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['chaplin', 'views/base/view'], function(Chaplin, View) {
+  define(['chaplin', 'js/desktop/views/base/view'], function(Chaplin, View) {
     'use strict';
     var CollectionView, _ref;
 

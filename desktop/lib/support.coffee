@@ -1,6 +1,6 @@
 define [
   'underscore'
-  'lib/utils'
+  'js/desktop/lib/utils'
   'chaplin'
 ], (_, utils, Chaplin) ->
   'use strict'

@@ -10,15 +10,15 @@
   // Configure the AMD module loader
   requirejs.config({
     // The path where your JavaScripts are located
-    baseUrl: 'js/desktop',
+    baseUrl: '',
     // Specify the paths of vendor libraries
     paths: {
-      jquery: '../vendor/jquery-1.9.1',
-      underscore: '../vendor/underscore-1.4.3',
-      backbone: '../vendor/backbone-1.0.0',
-      handlebars: '../vendor/handlebars-1.0.rc.1',
-      text: '../vendor/require-text-2.0.3',
-      chaplin: '../vendor/chaplin-0.8.1'
+      jquery: 'js/vendor/jquery-1.9.1',
+      underscore: 'js/vendor/underscore-1.4.3',
+      backbone: 'js/vendor/backbone-1.0.0',
+      handlebars: 'js/vendor/handlebars-1.0.rc.1',
+      text: 'js/vendor/require-text-2.0.3',
+      chaplin: 'js/vendor/chaplin-0.8.1'
     },
     // Underscore and Backbone are not AMD-capable per default,
     // so we need to use the AMD wrapping of RequireJS
@@ -40,7 +40,7 @@
   });
 
   // Bootstrap the application
-  require(['application'], function(Application) {
+  require(['js/desktop/application'], function(Application) {
     (new Application).initialize();
   });
   </script>

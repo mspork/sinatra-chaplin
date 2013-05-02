@@ -1,5 +1,5 @@
 define [
-  'models/base/model'
+  'js/desktop/models/base/model'
 ], (Model) ->
   'use strict'
 

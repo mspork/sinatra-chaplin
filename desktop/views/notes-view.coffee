@@ -1,7 +1,7 @@
 define [
-  'views/base/view'
-  'text!templates/notes.hbs',
-  'models/notes'
+  'js/desktop/views/base/view'
+  'text!templates/desktop/notes.hbs',
+  'js/desktop/models/notes'
 ], (View, template, Notes) ->
   'use strict'
 

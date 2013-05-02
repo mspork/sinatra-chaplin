@@ -2,7 +2,7 @@
 (function() {
   var __slice = [].slice;
 
-  define(['handlebars', 'chaplin', 'lib/utils'], function(Handlebars, Chaplin, utils) {
+  define(['handlebars', 'chaplin', 'js/desktop/lib/utils'], function(Handlebars, Chaplin, utils) {
     'use strict';    Handlebars.registerHelper('url', function() {
       var options, params, routeName, _i;
 

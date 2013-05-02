@@ -1,8 +1,8 @@
 define [
-  'controllers/base/controller'
-  'models/notes'
-  'models/note'
-  'views/notes-view'
+  'js/desktop/controllers/base/controller'
+  'js/desktop/models/notes'
+  'js/desktop/models/note'
+  'js/desktop/views/notes-view'
 ], (Controller, Notes, Note, NotesView, MobiNotesView) ->
   'use strict'
 

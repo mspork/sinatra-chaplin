@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['views/base/view', 'text!templates/notes.hbs', 'models/notes'], function(View, template, Notes) {
+  define(['js/desktop/views/base/view', 'text!templates/desktop/notes.hbs', 'js/desktop/models/notes'], function(View, template, Notes) {
     'use strict';
     var NotesView, _ref;
 

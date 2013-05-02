@@ -1,4 +1,4 @@
-define ['chaplin', 'views/navigation-view'], (Chaplin, NavigationView) ->
+define ['chaplin', 'js/desktop/views/navigation-view'], (Chaplin, NavigationView) ->
   'use strict'
 
   class Controller extends Chaplin.Controller

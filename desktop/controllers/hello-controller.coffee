@@ -1,7 +1,7 @@
 define [
-  'controllers/base/controller'
-  'models/hello-world'
-  'views/hello-world-view'
+  'js/desktop/controllers/base/controller'
+  'js/desktop/models/hello-world'
+  'js/desktop/views/hello-world-view'
 ], (Controller, HelloWorld, HelloWorldView) ->
   'use strict'
 

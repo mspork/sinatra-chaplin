@@ -5,15 +5,13 @@ define(
 	'zepto',
 	'foundation',
 	'foundationtopbar',
-	'text!desktop/templates/hello-world.hbs',
-	'text!desktop/templates/notes.hbs',
-	'text!desktop/templates/navigation.hbs' ],
+	'text!js/desktop/templates/hello-world.hbs',
+	'text!templates/mobile/notes.hbs'],
 	function(
 		Backbone, Handlebars,
 		Zepto, Foundation, FoundationTopbar,
-		helloTemplate, notesTemplate, navigationTemplate) {
-	// console.log(person.first + ' ' + person.last);
-	// 
+		helloTemplate, notesTemplate) {
+
 	var App = function() {
 
 		var Notes = Backbone.Collection.extend({

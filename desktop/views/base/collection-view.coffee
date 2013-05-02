@@ -1,6 +1,6 @@
 define [
   'chaplin',
-  'views/base/view'
+  'js/desktop/views/base/view'
 ], (Chaplin, View) ->
   'use strict'
 
