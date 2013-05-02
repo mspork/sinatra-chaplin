@@ -5,7 +5,7 @@ define(
 	'zepto',
 	'foundation',
 	'foundationtopbar',
-	'text!js/desktop/templates/hello-world.hbs',
+	'text!templates/desktop/hello-world.hbs',
 	'text!templates/mobile/notes.hbs'],
 	function(
 		Backbone, Handlebars,
