@@ -62,6 +62,7 @@
   require(['js/mobile/application'], 
     function(App) {
       window.app = new App();
+      window.app.init();
       console.log("App instantiated");
   });
 
@@ -69,25 +70,34 @@
 
 </head>
 <body>
-    <nav id="nav-container" class="top-bar">
-      <ul class="title-area">
-        <li class="name" ><h1><a href="/mobi" title='mspork'>Site</a></h1></li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>  
-      </ul>
 
-      <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="right">
-          <li class="divider"></li>
-          <li><a href="#">Home</a></li>
-          <li class="divider"></li>
-          <li><a href="#notes">Notes</a></li>
-          <li class="divider"></li>
+    <div class="row">
+      <div class="twelve columns">    
+      <nav id="nav-container" class="top-bar">
+        <ul class="title-area">
+          <li class="name" ><h1><a href="/mobi" title='mspork'>Group Fit Scheduler</a></h1></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>  
         </ul>
-      </section>          
-    </nav>
 
-    <div id="content-container" class="row"></div>
+        <section class="top-bar-section">
+          <!-- Left Nav Section -->
+          <ul class="right">
+            <li class="divider"></li>
+            <li><a href="#notes">Notes</a></li>
+            <li class="divider"></li>
+            <li><a href="#profile">Profile</a></li>
+            <li class="divider"></li>
+          </ul>
+        </section>          
+      </nav>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="twelve columns" id="content-container">
+      
+    </div>
+  </div>
   
 </body>
 </html>

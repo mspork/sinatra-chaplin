@@ -4,6 +4,41 @@
 // Comment out this import if you are customizing you imports below
 @import "foundation";
 
+@import "general_foundicons";
+
+@import "font-awesome";
+
+body {
+  	top: 26px;
+}
+
+.top-bar {
+  	margin-bottom: 0px;
+}
+
+.listview { 
+	display: block; 
+	// margin-top: 26px; 
+}
+
+.listview ul {
+
+}
+
+.listview ul a li {
+	display: block;
+	width: 100%;
+	height: 90%;
+	border-bottom: 1px solid #b9b9b9;
+  border-top: 1px solid #f7f7f7;
+  background: #ebebeb;	
+}
+
+.list-item-arrow  {
+  position: absolute;
+  right: 40px;
+}
+
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
 

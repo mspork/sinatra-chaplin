@@ -21,39 +21,6 @@ $em-base: 16px !default;
   @return $pxWidth / $em-base * 1em;
 }
 
-// from _settings for foundicons
-
-$fontFileName: "../fonts/general_foundicons";
-$fontName: "GeneralFoundicons";
-$classPrefix: "foundicon-";
-
-@mixin i-class($name,$pua) {
-  .#{$classPrefix}#{$name}:before { 
-    content: "\f#{$pua}";
-  }
-}
-
-@mixin ie-class($name,$pua) {
-  .#{$classPrefix}#{$name} { 
-    *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = "&#xf#{$pua};"); 
-  }
-}
-
-@mixin face {
-  @font-face { 
-    font-family: $fontName;
-    src: url('#{$fontFileName}.eot');
-    src: url('#{$fontFileName}.eot?#iefix') format('embedded-opentype'),
-         url('#{$fontFileName}.woff') format('woff'),
-         url('#{$fontFileName}.ttf') format('truetype'),
-         url('#{$fontFileName}.svg##{$fontName}') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
-}
-
-//// end of settings for foundicons
-
 //// Various global styles
 
 // $body-bg: #fff;
@@ -124,9 +91,9 @@ $classPrefix: "foundicon-";
 // Grid Variables
 //
 
-$row-width: emCalc(768px);
-$column-gutter: emCalc(30px);
-$total-columns: 12;
+// $row-width: emCalc(1000px);
+// $column-gutter: emCalc(30px);
+// $total-columns: 12;
 
 //
 // Block Grid Variables

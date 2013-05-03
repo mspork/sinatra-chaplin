@@ -1,10 +1,17 @@
-<div class="section-container auto" data-section>
+<div class="listview">
+	
+<ul>
+		
 {{#each items }}
-  <section>
-    <p class="title" data-section-title><a href="#notes/{{id}}">{{ text }}</a></p>
-    <div class="content" data-section-content>
-      <p>{{ remindInterval }}</p>
-    </div>
-  </section>
+  
+  <a href="#notes/{{id}}"><li>
+    <h4>{{ text }}</h4>
+    <p class="desc">{{ remindInterval }} <span><i class="icon-angle-right list-item-arrow icon-2x"></i></span>
+    </p>
+  </li>
+  </a>
 {{/each}}
+	</ul>
+
 </div>
+

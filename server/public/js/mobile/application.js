@@ -5,14 +5,14 @@ define(
 	'zepto',
 	'foundation',
 	'foundationtopbar',
-	'text!templates/desktop/hello-world.hbs',
-	'text!templates/mobile/notes.hbs'],
+	'text!templates/mobile/profile.hbs',
+	'text!templates/mobile/notes.hbs',
+	'text!templates/mobile/note.hbs'
+	],
 	function(
 		Backbone, Handlebars,
 		Zepto, Foundation, FoundationTopbar,
-		helloTemplate, notesTemplate) {
-
-	var App = function() {
+		profileTemplate, notesTemplate, noteTemplate) {
 
 		var Notes = Backbone.Collection.extend({
 			url: '/api/notes'
@@ -22,30 +22,41 @@ define(
 			urlRoot: '/api/note'
 		});
 
-		var NoteList = Backbone.View.extend({
+		var NoteListView = Backbone.View.extend({
 			el: '#content-container',
 			render: function(){
-				var notes = new Notes();
-				var that = this;
-				notes.fetch({
-					success: function(notes) {
-						// console.log(notes.toJSON());
-						// https://github.com/wycats/handlebars.js/issues/122
-						var json = notes.toJSON();
-						var templateFunc = Handlebars.compile(notesTemplate);
-						that.$el.html(templateFunc({ 'items': json }));
-						$('.top-bar')
-							.removeClass('expanded')
-							.css('min-height', '');
-					}
-				});
+				console.log("NoteListView#render()");
+				// var notes = new Notes();
+				var self = this;
+				// notes.fetch({
+				// 	success: function(notes) {
+				var json = this.collection.toJSON();
+				var templateFunc = Handlebars.compile(notesTemplate);
+				self.$el.html(templateFunc({ 'items': json }));
+				$('.top-bar')
+					.removeClass('expanded')
+					.css('min-height', '');
 			}
 		});
 
-		var HelloView = Backbone.View.extend({
+		var NoteView = Backbone.View.extend({
+			el: '#content-container',
+
+			initialize: function(){
+				this.model.on('show', this.render, this);
+			},
+			render: function(){
+				// var that = this;
+				var json = this.model.toJSON();
+				var templateFunc = Handlebars.compile(noteTemplate);
+				this.$el.html(templateFunc( json ));
+			}
+		});
+
+		var ProfileView = Backbone.View.extend({
 			el: '#content-container',
 			render: function(){
-				templateFunc = Handlebars.compile(helloTemplate);
+				templateFunc = Handlebars.compile(profileTemplate);
 				this.$el.html(templateFunc());
 				$('.top-bar')
 					.removeClass('expanded')
@@ -53,47 +64,65 @@ define(
 			}
 		});
 
-		// var NavigationView = Backbone.View.extend({
-		// 	el: '#navigation-container',
-		// 	render: function(){
-		// 		templateFunc = Handlebars.compile(navigationTemplate);
-		// 		this.$el.html(templateFunc({ 'navPath' :  'mobi' }));
-		// 	}
-		// });
-
 		var Router = Backbone.Router.extend({
 			routes: {
-				'': 'home',
-				'notes': 'notes'
+				'': 'notes',
+				'notes': 'notes',
+				'notes/:id': 'openNote',
+				'profile': 'profile'
 			}
 		});
 
+	var App = function() {
+		this.collections.notes = new Notes();
+		this.views.noteListView = new NoteListView( { collection: this.collections.notes} );
+		this.views.profileView = new ProfileView();
+		this.router = new Router();
 
-		var noteList = new NoteList();
-		var home = new HelloView();
-		
-		// var nav = new NavigationView();
+		var self = this;
 
-		var router = new Router();
-
-
-		router.on('route:home', function() {
-			// nav.render();
-			home.render();
+		this.router.on('route:profile', function() {
+			self.views.profileView.render();
 		});
 
-		router.on('route:notes', function() {
+		this.router.on('route:notes', function() {
 			console.log("notes route");
-			// nav.render();
-			noteList.render();
+			// self.views.noteListView.render();
+			self.collections.notes.fetch({
+				success: function() {
+						self.views.noteListView.render();
+				}
+			});
 		});
 
-		Backbone.history.start();
-		// Backbone.history.start({pushState: true});
-		// 
-		Zepto(document).foundation();
+		this.router.on('route:openNote', function(id) {
+			console.log("we have id: " + id);
+			var note = self.collections.notes.get(id);
+			console.log(note);
+			var noteView = new NoteView( {model: note });
+			note.trigger('show');
+		});
+
 	};
 
+	// App.prototype.views = {};
+	// App.prototype.collections = {};
+
+	App.prototype = {
+    views: {},
+    collections: {},
+    init: function() {
+			// var self = this;
+			// self.collections.notes.fetch({
+			// 	success: function(notes) {
+			// 			self.views.noteListView.render();
+			// 	}
+			// });
+			Backbone.history.start();
+			// Backbone.history.start({pushState: true});
+			Zepto(document).foundation();
+    }
+  };
 	console.log('returning from application.js');
 	return App;
 });
