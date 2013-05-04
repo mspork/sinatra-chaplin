@@ -13,7 +13,12 @@ body {
 }
 
 .top-bar {
-  	margin-bottom: 0px;
+  // padding: 0 10px; 
+  margin-bottom: 0px;
+}
+
+.top-bar .name h1 a {
+  padding: 0 0 0 0; 	
 }
 
 .listview { 
@@ -34,8 +39,6 @@ body {
   background: #ebebeb;	
   padding: 10px 10px 10px 10px;
 }
-
-
 
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing

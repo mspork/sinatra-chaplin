@@ -5171,6 +5171,9 @@ ul.icons {
 .top-bar {
   margin-bottom: 0px; }
 
+.top-bar .name h1 a {
+  padding: 0 0 0 0; }
+
 .listview {
   display: block; }
 
