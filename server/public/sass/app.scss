@@ -9,7 +9,7 @@
 @import "font-awesome";
 
 body {
-  	top: 26px;
+  	// top: 26px;
 }
 
 .top-bar {
@@ -28,10 +28,11 @@ body {
 .listview ul a li {
 	display: block;
 	width: 100%;
-	height: 90%;
+	height: 90px;
 	border-bottom: 1px solid #b9b9b9;
   border-top: 1px solid #f7f7f7;
   background: #ebebeb;	
+  padding: 10px 10px 10px 10px;
 }
 
 .list-item-arrow  {
