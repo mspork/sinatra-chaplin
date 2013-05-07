@@ -1,3 +1,7 @@
 .rvmrc
 .bundle
 *.swp
+*.sublime-project
+*.sublime-workspace
+server/.sass-cache/
+.bundle
