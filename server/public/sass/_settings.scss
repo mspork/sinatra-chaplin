@@ -268,14 +268,16 @@ $total-columns: 12;
 
 //// Labels
 
+$form-label-font-size:               emCalc(18px) !default;
+
 // $label-pointer: pointer;
-// $label-font-size: emCalc(14px);
+$label-font-size: emCalc(18px);
 // $label-font-weight: 500;
 // $label-font-color: lighten(#000, 30%);
 // $label-bottom-margin: emCalc(3px);
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: emCalc(14px);
+$input-font-size: emCalc(18px);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: darken(#fff, 2%);
 // $input-border-color: darken(#fff, 20%);
@@ -742,7 +744,7 @@ $total-columns: 12;
 
 //// We use these to style the label text
 
-// $label-font-sizing: emCalc(14px);
+$label-font-sizing: emCalc(18px);
 // $label-font-weight: bold;
 // $label-font-color: #333;
 // $label-font-color-alt: #fff;

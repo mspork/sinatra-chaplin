@@ -40,6 +40,11 @@ body {
   padding: 10px 10px 10px 10px;
 }
 
+fieldset legend {
+	font-size: emCalc(18px);
+}
+
+
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
 
