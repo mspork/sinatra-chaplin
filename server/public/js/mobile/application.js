@@ -26,10 +26,7 @@ define(
 			el: '#content-container',
 			render: function(){
 				console.log("NoteListView#render()");
-				// var notes = new Notes();
 				var self = this;
-				// notes.fetch({
-				// 	success: function(notes) {
 				var json = this.collection.toJSON();
 				var templateFunc = Handlebars.compile(notesTemplate);
 				self.$el.html(templateFunc({ 'items': json }));
@@ -46,7 +43,6 @@ define(
 				this.model.on('show', this.render, this);
 			},
 			render: function(){
-				// var that = this;
 				var json = this.model.toJSON();
 				var templateFunc = Handlebars.compile(noteTemplate);
 				this.$el.html(templateFunc( json ));
@@ -87,7 +83,6 @@ define(
 
 		this.router.on('route:notes', function() {
 			console.log("notes route");
-			// self.views.noteListView.render();
 			self.collections.notes.fetch({
 				success: function() {
 						self.views.noteListView.render();
@@ -105,19 +100,10 @@ define(
 
 	};
 
-	// App.prototype.views = {};
-	// App.prototype.collections = {};
-
 	App.prototype = {
     views: {},
     collections: {},
     init: function() {
-			// var self = this;
-			// self.collections.notes.fetch({
-			// 	success: function(notes) {
-			// 			self.views.noteListView.render();
-			// 	}
-			// });
 			Backbone.history.start();
 			// Backbone.history.start({pushState: true});
 			Zepto(document).foundation();
