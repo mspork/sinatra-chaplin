@@ -92,10 +92,23 @@ define(
 
 		this.router.on('route:openNote', function(id) {
 			console.log("we have id: " + id);
-			var note = self.collections.notes.get(id);
-			console.log(note);
-			var noteView = new NoteView( {model: note });
-			note.trigger('show');
+			var note, noteView;
+			// TODO: clean this up - factor out commonalities
+			if(self.collections.length > 0){
+				note = self.collections.notes.get(id);
+				console.log(note);
+				noteView = new NoteView( {model: note });
+				note.trigger('show');
+			} else {
+				self.collections.notes.fetch({
+					success: function() {
+							note = self.collections.notes.get(id);
+							console.log(note);
+							noteView = new NoteView( {model: note });
+							note.trigger('show');
+					}
+				});
+			}
 		});
 
 	};

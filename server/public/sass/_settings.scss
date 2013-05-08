@@ -52,6 +52,12 @@ $classPrefix: "foundicon-";
   }
 }
 
+
+
+// .mobile {
+//   @include button(0.25em, $primary-color, false, true, false, false);
+// }
+
 //// end of settings for foundicons
 
 //// Various global styles
@@ -124,7 +130,8 @@ $classPrefix: "foundicon-";
 // Grid Variables
 //
 
-$row-width: emCalc(768px);
+// $row-width: emCalc(768px);
+$row-width: 100%;
 $column-gutter: emCalc(30px);
 $total-columns: 12;
 

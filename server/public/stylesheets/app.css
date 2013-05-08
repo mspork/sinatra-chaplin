@@ -86,7 +86,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 48em;
+  max-width: 100%;
   *zoom: 1; }
   .row:before, .row:after {
     content: " ";
@@ -2657,7 +2657,7 @@ form.custom {
       background: #111111; }
 
   .contain-to-grid .top-bar {
-    max-width: 48em;
+    max-width: 100%;
     margin: 0 auto;
     margin-bottom: 1.875em; }
 
@@ -5188,3 +5188,6 @@ ul.icons {
 
 fieldset legend {
   font-size: 1.125em; }
+
+.columns {
+  margin: 10px 0px 0px 0px; }
