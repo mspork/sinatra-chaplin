@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="small-6 columns">
+        <h3>Edit Note</h3>
+    </div>
+    <div class="small-6 columns">
+        <div class="right">
+            <ul class="button-group">
+                <li><a href="#notes/{{id}}" class="button secondary" style="width: 100%">Cancel</a></li>
+                <li><a href="#notes/{{id}}/save" class="button" id='save' style="width: 100%">Save</a></li>
+            </ul>
+        </div>        
+    </div>
+</div>
+
+<div class="row centered">
+<div class="small-12 columns">
+    
+<form class="custom" id='note'>
+    <fieldset>
+        {{! <legend> }}
+            {{! <span>Note Details</span> }}
+        {{! </legend> }}
+        <label>Text</label>
+        <input type="text" name="text" value="{{text}}">
+        <label>Reminder every</label>
+        <input type="text" name="remindInterval" value="{{remindInterval}}">
+    </fieldset>
+</form>
+</div>
+</div>

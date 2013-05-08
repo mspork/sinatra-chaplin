@@ -14,13 +14,15 @@
 <div class="small-12 columns">
     
 <form class="custom">
-    {{! <fieldset disabled> }}
-        {{! <legend>Note Details</legend> }}
+    <fieldset disabled>
+        {{! <legend> }}
+            {{! <span>Note Details</span> }}
+        {{! </legend> }}
         <label>Text</label>
         <input type="text" value="{{text}}" disabled>
         <label>Reminder every</label>
         <input type="text" value="{{remindInterval}}" disabled>
-    {{! </fieldset> }}
+    </fieldset>
 </form>
 </div>
 </div>
