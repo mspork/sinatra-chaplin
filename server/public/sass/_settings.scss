@@ -16,6 +16,8 @@ $base-font-size: 100% !default;
 //// set the value of $em-base to $base-font-size ($em-base: $base-font-size;)
 $em-base: 16px !default;
 
+$button-bar-margin-opposite: 0px !default;
+
 //// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
 @function emCalc($pxWidth) {
   @return $pxWidth / $em-base * 1em;
@@ -301,6 +303,7 @@ $input-font-size: emCalc(18px);
 // $fieldset-border-color: #ddd;
 // $fieldset-padding: emCalc(20px);
 // $fieldset-margin: emCalc(18px) 0;
+$fieldset-margin: 0 0;
 
 //// Legends
 
@@ -331,7 +334,7 @@ $input-font-size: emCalc(18px);
 
 // $button-tny: emCalc(7px);
 // $button-sml: emCalc(9px);
-// $button-med: emCalc(12px);
+$button-med: emCalc(12px);
 // $button-lrg: emCalc(16px);
 
 //// Display property.

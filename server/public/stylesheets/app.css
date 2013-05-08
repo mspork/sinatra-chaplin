@@ -1786,7 +1786,7 @@ input[type="file"] {
 fieldset {
   border: solid 1px #dddddd;
   padding: 1.25em;
-  margin: 1.125em 0; }
+  margin: 0 0; }
   fieldset legend {
     font-weight: bold;
     background: white;
@@ -2089,7 +2089,7 @@ form.custom {
     clear: both; }
   .button-bar .button-group {
     float: left;
-    margin-right: 0.625em; }
+    margin-right: 0px; }
     .button-bar .button-group div {
       overflow: hidden; }
 
