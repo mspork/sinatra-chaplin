@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'sinatra', '>=1.1.2'
+gem 'thin'
 # gem 'sinatra-sequel'
 gem 'shotgun', '0.9'
 
@@ -10,6 +11,7 @@ gem 'pry'
 
 gem 'compass'
 gem 'zurb-foundation'
+gem 'rb-fsevent', '>=0.9.1'
 
 group :development do
   # gem 'sqlite3'

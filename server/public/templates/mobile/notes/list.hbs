@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="small-4 columns">
+        <h4>Notes</h4>
+    </div>
+    <div class="small-8 columns">
+        <div class="right">
+            <div class="button-bar right">
+                <ul class="button-group right">
+                    <li><a href="#notes/add" class="button small" id='add'>
+                      <i class="icon-plus-sign-alt icon-2x"></i>
+                    </a></li>
+                </ul>
+        </div>
+        </div>        
+    </div>
+</div>
+<div class="listview" style="position:relative;">
+<ul>
+{{#each items }}
+  <a href="#notes/{{id}}">
+  <li>
+  	<div style="position:absolute;left:10px;">
+  		<h4>{{ text }}</h4>
+  		<p>{{ remindInterval }}</p>
+  	</div>
+  	<div style="position:absolute;right:0;line-height:80px;">
+		  <i class="icon-angle-right icon-2x"></i>		
+  	</div>
+  </li>
+  </a>
+{{/each}}
+	</ul>
+</div> 
+

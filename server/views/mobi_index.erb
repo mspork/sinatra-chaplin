@@ -8,11 +8,9 @@
   <link rel="stylesheet" href="stylesheets/normalize.css">
   <link rel="stylesheet" href="stylesheets/app.css">
 
-
   <!-- <script src="http://jsconsole.com/remote.js?D1223D1E-75E5-4B57-BB64-A14FD4D52052"></script> -->
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="js/vendor/require-2.1.1.js"></script>
-
 
 </head>
 <body>
@@ -53,7 +51,8 @@
       text:                   'js/vendor/require-text-2.0.3',
       // foundation
       foundation:           'js/foundation/foundation',
-      foundationtopbar:     'js/foundation/foundation.topbar'
+      foundationtopbar:     'js/foundation/foundation.topbar',
+      app:                  'js/mobile/application'
     },
     // Underscore and Backbone are not AMD-capable per default,
     // so we need to use the AMD wrapping of RequireJS
@@ -77,15 +76,18 @@
       },
       foundationtopbar: {
           deps: ["zepto", "foundation"]
+      },
+      app: {
+        deps: ['zepto', 'underscore', 'backbone']
       }
     }
     // For easier development, disable browser caching
     // Of course, this should be removed in a production environment
-    , urlArgs: 'bust=' +  (new Date()).getTime()
+    // , urlArgs: 'bust=' +  (new Date()).getTime()
   });
 
   // Bootstrap the application
-  require(['js/mobile/application'], 
+  require(['app'], 
     function(App) {
       window.app = new App();
       window.app.init();
